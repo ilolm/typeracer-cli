@@ -11,17 +11,32 @@
 
 Because most other shell clients don't offer the features that we do
 
-## Features
+---
+
+# Features
 
 - Practice mode (offline mode)
 - User stats (words per minute, time taken)
 - Online mode (have a type-race by spawning up a server and sharing it with your friends)
 - Ask for a rematch after the race ends (online mode)
 - Can view the top 10 Highscores in online mode
+- Dockerized image
 
-## Installation
+---
 
-run `npm i --global typeracer-cli` from your command line
+# Installation
+
+1. **Docker:** (default option `practice`)
+```bash
+sudo docker image pull p-society/typeracer-cli:latest
+```
+
+2. **Direct installation**, run from your command line
+```bash
+npm i --global typeracer-cli
+```
+
+<br />
 
 ## Possible Errors
 
@@ -29,25 +44,64 @@ When you have installed this tool some times later you could find some error whe
 
 This may be because new update might have been rolled out and you have to update to latest version.
 
-**How to update**
+<br />
 
-Its same as installation just run `npm i --global typeracer-cli` from your command line
+## How to update
 
-Now even after that if you see any errors, follow the below steps
+1. **Docker:**
+```bash
+sudo docker image pull p-society/typeracer-cli:latest
+```
 
-- find **.nvm** folder in your home directory.
+2. **Binary:**
+```bash
+npm i --global typeracer-cli`
+```
 
--  cd to `.nvm/versions/node/${your node version}/bin` and delete **typerace file**
--  cd to `.nvm/versions/node/${your node version}/lib/node_modules` and delete **typeracer-cli folder**
-- run `npm - -global typeracer-cli`
+<br />
 
-These steps should resolve the isssue. If it does not please open an isssue.
+## Errors while update
+1. find **.nvm** folder in your home directory.
+```bash
+ls -ld ~/.nvm
+```
 
-## Usage
+2. cd to `.nvm/versions/node/${your node version}/bin` and delete **typerace** file
+```bash
+cd ~/.nvm/versions/node/${node --version | awk -F 'v' '{print $2}'}/bin
+rm typerace
+``` 
 
-run `typerace` or `typerace -h` to its usage
+3. cd to `.nvm/versions/node/${your node version}/lib/node_modules` and delete **typeracer-cli** directory
+```bash
+cd ~/.nvm/versions/node/${node --version | awk -F 'v' '{print $2}'}/lib/node_modules
+rm -r typeracer-cli
+```
 
-**Output**
+4. Try to install again:
+```bash
+npm i --global typeracer-cli
+```
+
+**These steps should resolve the isssue. If it does not please open an isssue.**
+
+---
+
+# Usage
+
+1. **Docker:** (Default option `practice`)
+```bash
+sudo docker container run -it --rm p-society/typeracer-cli [-h/--help] [options]
+```
+
+2. **Binary:**
+```bash
+typerace [-h/--help] [options]
+```
+
+---
+
+# Help menu
 
 ```
 Usage: typerace [options] [command]
@@ -62,27 +116,49 @@ Usage: typerace [options] [command]
     online|o [options]  Start game in online mode
 ```
 
-**Practice mode**
+---
 
-- `typerace p` to start practice mode.
+# Modes overview
 
-**Preview of practice mode**
+## Practice mode
+
+To start practice mode:
+```bash
+sudo docker container run -it --rm p-society/typeracer-cli
+```
+
+**OR**
+
+```bash
+typerace p
+```
+
+<br />
+  
+### Preview of practice mode
 
 ![practice](https://user-images.githubusercontent.com/24803604/39970250-e3d22eca-5705-11e8-9c89-472ff4d982ea.gif)
 
+<br />
 
-**Online mode**
+## Online mode
 
-**Prevew of online mode**
+### To start online mode:
+```bash
+sudo docker container run -it --rm p-society/typeracer-cli o -f
+```
 
-![online](https://user-images.githubusercontent.com/24803604/39970260-f63d6bc4-5705-11e8-8d94-b2f984f8c998.gif)
+**OR**
 
+```bash
+typerace o -f
+```
 
- - `typerace o -f` to start online mode which will prompt a question
+You will be prompt by a question:
 
 **Are you starting server for race (y/N) ?**
 
-Now 2 cases are there
+Now 2 cases are there:
 
 - If **yes**
   - You will share **Room to join for race**, **Number of racers**, **Number(sort of password)**
@@ -91,15 +167,29 @@ Now 2 cases are there
 - If **no**  
   - Ask for **Room to join for race**, **Number of racers**, **Number(sort of password)** from your friend who created a private room to race.
 
-**Highscores**
+<br />
 
-To view the top 10 Highscores in online mode.
+### To view the Highscores:(Top 10 in online mode)
+```bash
+sudo docker container run -it --rm p-society/typeracer-cli o -s
+```
 
-run `typerace o -s`
+**OR**
 
-Enjoy :fire:
+```bash
+typerace o -s
+```
+<br />
 
-## Contributing
+### Prevew of online mode
+
+![online](https://user-images.githubusercontent.com/24803604/39970260-f63d6bc4-5705-11e8-8d94-b2f984f8c998.gif)
+
+**Enjoy** :fire:
+
+---
+
+# Contributing
 
 If you think of a feature enhancement or find a bug kindly raise an issue. We also welcome you to work on your issues by just commenting down on them with *"I would like to work on this"*. All contributions are appreciated.
 
@@ -131,7 +221,9 @@ Yes, ofcourse you can we need lots of paragraphs so that our users don't get bor
 - Find same paragraphs then run `npm test`
 - If all tests pass locally then **Open a PR**
 
-## Support Us
+---
+
+# Support Us
 
 We are a bunch of undergrads passionate about software development looking to make cool stuff. A little motivation and support helps us a lot. If you like this nifty hack you can support us by doing any (or all :wink: ) of the following:
 - :arrow_up: Upvote on producthunt [producthunt](https://www.producthunt.com/posts/typeracer-cli)
@@ -142,7 +234,9 @@ We are a bunch of undergrads passionate about software development looking to ma
 - Install it and increase our download count on npm
 - Donation (Coming Soon)
 
-## Contributors
+---
+
+# Contributors
 
 - *Conceived by:*  :thought_balloon: <a href="https://github.com/shibasisp">Shibasis Patel</a>
 - *Developed by:*  :computer: <a href="https://github.com/knrt10">Kautilya Tripathi</a>
