@@ -16,9 +16,19 @@ Because most other shell clients don't offer the features that we do
 # Sections
 - [Features](#features)
 - [Installation](#installation)
+  - [Possible Errors](#possible-errors)
+  - [How to update](#how-to-update)
+  - [Errors while update](#errors-while-update)
 - [Usage](#usage)
 - [Help menu](#help-menu)
 - [Modes overview](#modes-overview)
+  - [Practice mode](#practice-mode)
+    - [To start practice mode](#to-start-practice-mode)
+    - [Preview of practice mode](#preview-of-practice-mode)
+  - [Online mode](#online-mode)
+    - [To start online mode](#to-start-online-mode)
+    - [To view the Highscores](#to-view-the-highscorestop-10-in-online-mode)
+    - [Prevew of online mode](#preview-of-online-mode)
 - [Contributing](#contributing)
 - [Support Us](#support-us)
 - [Contributors](#contributors)
@@ -134,7 +144,7 @@ Usage: typerace [options] [command]
 
 ## Practice mode
 
-To start practice mode:
+### To start practice mode
 ```bash
 sudo docker container run -it --rm p-society/typeracer-cli
 ```
@@ -155,7 +165,7 @@ typerace p
 
 ## Online mode
 
-### To start online mode:
+### To start online mode
 ```bash
 sudo docker container run -it --rm p-society/typeracer-cli o -f
 ```
@@ -193,7 +203,7 @@ typerace o -s
 ```
 <br />
 
-### Prevew of online mode
+### Preview of online mode
 
 ![online](https://user-images.githubusercontent.com/24803604/39970260-f63d6bc4-5705-11e8-8d94-b2f984f8c998.gif)
 
