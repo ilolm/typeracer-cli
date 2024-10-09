@@ -13,6 +13,18 @@ Because most other shell clients don't offer the features that we do
 
 ---
 
+# Sections
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Help menu](#help-menu)
+- [Modes overview](#modes-overview)
+- [Contributing](#contributing)
+- [Support Us](#support-us)
+- [Contributors](#contributors)
+
+---
+
 # Features
 
 - Practice mode (offline mode)
