@@ -48,7 +48,7 @@ Because most other shell clients don't offer the features that we do
 
 # Installation
 
-1. **Docker:** (default option `practice`)
+1. **Docker:**
 ```bash
 sudo docker image pull p-society/typeracer-cli:latest
 ```
